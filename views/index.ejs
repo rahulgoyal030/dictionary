@@ -13,6 +13,14 @@
     <input type="text" id="word" name="word">
     <button type="submit" id="find" name="find" > search</button>
     </form>
+  </div>
+  <div id="searchResult">
+   
+    <%  for(var i=0; i<words.length; i++) { %>
+    <%= words[i].word  %><br>
+    <% } %>
+    <%  %>
+
   </div>  
 </body>
 </html>

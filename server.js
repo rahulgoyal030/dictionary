@@ -29,7 +29,7 @@ app.get('/search',function  (req,res) {
 	var word= req.query.word[0];
 	var dictUrl = "https://letsventure.0x10.info/api/dictionary.php?type=json&query="+word;  // in query put    the request query
 
-
+    
 	 request.get( dictUrl , function (error, response, body) {
  		 if (!error && response.statusCode == 200) {
   					  //console.log(body);
@@ -40,10 +40,12 @@ app.get('/search',function  (req,res) {
   					// }
   				
   				var data= JSON.parse(body);
-  				console.log(data[3].word);
- 				 }
+  				console.log(data[0].word);  // checking if we are getting data
+  				res.render('index', {words: data  });
+ 			 }
 		})
-	 res.render('index');
+	 
+	// console.log("reaching here data is  " ,data)
 
 });
 
