@@ -14,10 +14,15 @@
     <button type="submit" id="find" name="find" > search</button>
     </form>
   </div>
+  
+  <div>
+    <a href="/result">click here</a>
+  </div>
+
   <div id="searchResult">
    
-    <%  for(var i=0; i<words.length; i++) { %>
-    <%= words[i].word  %><br>
+    <%  for(var i=0; i<words.length&&i<3; i++) { %>
+     <p> <span id="wordName"><%= words[i].word  %> </span> :- <%= words[i].description %></p> 
     <% } %>
     <%  %>
 
