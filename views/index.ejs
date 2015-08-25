@@ -15,16 +15,24 @@
     </form>
   </div>
   
-  <div>
-    <a href="/result">click here</a>
+  <div id="audioclip">
+      <button  id="play">audio</button>
+  </div>
+
+  <div id="bookmark" >
+     <form action="/bookmark" method="post" >
+       <button type="submit">bookmark</button>
+     </form>
   </div>
 
   <div id="searchResult">
    
-    <%  for(var i=0; i<words.length&&i<3; i++) { %>
-     <p> <span id="wordName"><%= words[i].word  %> </span> :- <%= words[i].description %></p> 
+   <!--  <%  for(var i=0; i<words.length&&i<3; i++) { %>
+    <p> <span id="wordName"><%= words[i].word  %> </span> :-  <%= words[i].description %></p> 
     <% } %>
-    <%  %>
+    <% console.log(words.word) %>
+ -->
+     <p id="searchResult" > <%=  words %> <%= description %> </p>
 
   </div>  
 </body>
