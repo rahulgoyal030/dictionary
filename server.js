@@ -54,7 +54,7 @@ app.get('/search',function  (req,res) {
   					{ 
 
               console.log( data[x].word , data[x].audio_url + " word here ") ;
-  					 	res.render('index', {words: data[x].word , description : data[x].description , audio : data[x].audio_url  });
+  					 	res.render('index', { words : data[x].word , description : data[x].description , audio : data[x].audio_url  });
   					 	flag=1;
   					} 
   				}
@@ -74,8 +74,10 @@ app.get('/search',function  (req,res) {
 
 
 app.post('/bookmark' , function  (req , res) {
-   console.log(" reachin in bookmarks");  
+   console.log(" reachin in bookmarks" , req.body);  
    console.log( " bookmark body  ");
+   
+     res.send("hello");
 
 });
 
