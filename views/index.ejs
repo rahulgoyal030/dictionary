@@ -4,26 +4,19 @@
 	<title>dictionary</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="/js/bookmark.js" ></script>
 
 
 </head>
 <body>
   <div>
-    <form name="search" action="/search" method="GET">
+    <form name="search"  >
     <input type="text" id="word" name="word">
-    <button type="submit" id="find" name="find" > search</button>
+    <button  id="find" name="find" > search</button>
     </form>
   </div>
   
-  <div id="audioclip">
-      <button  id="play">audio</button>
-  </div>
-
-  <div id="bookmark" >
-     <form action="/bookmark" method="post" >
-       <button type="submit">bookmark</button>
-     </form>
-  </div>
+  
 
   <div id="searchResult">
    
@@ -32,8 +25,20 @@
     <% } %>
     <% console.log(words.word) %>
  -->
-     <p id="searchResult" > <%=  words %> <%= description %> </p>
+     <p id="searchResult" > <%=  words %>  </p>
+     <%= description %>
 
   </div>  
+
+  <div id="audioclip">
+      <button  id="play">audio</button>
+  </div>
+
+  <div id="bookmark" >
+     <form action="/bookmark" method="post" >
+
+       <button type="submit">bookmark</button>
+     </form>
+  </div>
 </body>
 </html>

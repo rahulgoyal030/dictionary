@@ -73,3 +73,10 @@ app.get('/search',function  (req,res) {
 });
 
 
+app.post('/bookmark' , function  (req , res) {
+   console.log(" reachin in bookmarks");  
+   console.log( " bookmark body  ");
+
+});
+
+
