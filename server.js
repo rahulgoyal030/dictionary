@@ -97,10 +97,25 @@ app.post('/bookmark' , function  (req , res) {
 
        var collection = db.collection('bookmark');   // inserting the new bookmark
        
-       
-       collection.insert({ 'word': req.body.word  , 'desc' : req.body.description });
-       console.log("data is inserted");
+       collection.find( {word: req.body.word}).toArray(function (err, result) {
+             if(err)
+             {
+                 console.log(" there is error");
+             }
+             if(result.length==0)
+             {
+                  collection.insert({ 'word': req.body.word  , 'desc' : req.body.description });
+                  console.log("data is inserted");
 
+             }
+             else{
+                  console.log(" word already exists");
+             }
+       });
+
+
+
+       
 
 
        collection.find().toArray(function(err, result){
