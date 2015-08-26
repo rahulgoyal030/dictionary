@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="/js/bookmark.js" ></script>
+  <script type="text/javascript" src="/js/audioplay.js" ></script>
 
 
 </head>
@@ -24,6 +25,11 @@
      <p id="searchResult"> <%=  words %>  </p>
       <p id="searchDes"><%= description %> </p>
 
+      <audio class="audioDemo"  preload="none"> 
+         <source src=<%= audio %> type="audio/mpeg">
+        
+      </audio>
+
   </div>  
 
   <div id="audioclip">
@@ -36,6 +42,7 @@
        <button id="book" type="submit">bookmark</button>
     
   </div>
+  <button id="playAudio" >play</button>
 
   <div id="savedBook">
       <p id="bookItems"> </p>

@@ -96,7 +96,8 @@ app.post('/bookmark' , function  (req , res) {
        console.log(" connected to the db");
 
        var collection = db.collection('bookmark');   // inserting the new bookmark
-
+       
+       
        collection.insert({ 'word': req.body.word  , 'desc' : req.body.description });
        console.log("data is inserted");
 
