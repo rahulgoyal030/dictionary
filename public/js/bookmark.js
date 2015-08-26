@@ -8,6 +8,7 @@ $(document).ready(function  () {
 
     	console.log(" testing ")
     	console.log (value  ," checking ");
+    	
     	$.post("/bookmark", { word : value , description : valueDes } , 
     		function  (data , status ) {
     			   

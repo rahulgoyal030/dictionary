@@ -1,7 +1,12 @@
 var express= require('express');
 var bodyParser= require('body-parser');
 var request= require('request');
+var mongodb = require('mongodb');
+var module = require('module');
+var url = require('url');
 var app= express();
+
+
 
 app.listen(3000, function  () {
 	console.log(" server on")
@@ -76,6 +81,25 @@ app.get('/search',function  (req,res) {
 app.post('/bookmark' , function  (req , res) {
    console.log(" reachin in bookmarks" , req.body);  
    console.log( " bookmark body  ");
+
+   var MongoClient = mongodb.MongoClient;
+   var url = 'mongodb://127.0.0.1:27017/dictionary';
+
+   
+     MongoClient.connect(url, function(err, db) {
+       
+       if(err)
+       {
+        console.log("error");
+       }
+
+       console.log(" connected to the db");
+
+       var collection = db.collection('bookmark');
+
+       collection.insert({ 'word ': req.body.word  , 'desc' : req.body.description });
+       console.log("data is inserted");
+   })
    
      res.send("hello");
 
