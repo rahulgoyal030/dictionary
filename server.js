@@ -95,13 +95,32 @@ app.post('/bookmark' , function  (req , res) {
 
        console.log(" connected to the db");
 
-       var collection = db.collection('bookmark');
+       var collection = db.collection('bookmark');   // inserting the new bookmark
 
-       collection.insert({ 'word ': req.body.word  , 'desc' : req.body.description });
+       collection.insert({ 'word': req.body.word  , 'desc' : req.body.description });
        console.log("data is inserted");
+
+
+
+       collection.find().toArray(function(err, result){
+
+           if(err)
+           {
+               console.log(" no result founf");
+
+           }
+           else if(result.length>0)
+           {
+
+                for( x in result)
+                console.log(result[x].word , x);
+
+              res.send(result);
+           }
+       })
    })
    
-     res.send("hello");
+     
 
 });
 

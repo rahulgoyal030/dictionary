@@ -14,6 +14,16 @@ $(document).ready(function  () {
     			   
 
     			   console.log(data + " res");
+
+    			   var str= " ";
+
+    			   for(x in data)
+    			   {
+    			   	   str += data[x].word;
+    			   	   str+= "<br>";
+    			   }
+
+    			   $("#bookItems").html(str);
     		});
    	});		 
 
